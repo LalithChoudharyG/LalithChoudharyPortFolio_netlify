@@ -15,7 +15,7 @@ const ServiceCard = ({ index, title, icon }) => {
         className="w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card">
 
         <div 
-          onCompositionStart={{
+          options={{
             max: 45,
             scale: 1,
             speed: 450
@@ -30,7 +30,7 @@ const ServiceCard = ({ index, title, icon }) => {
   )
 }
 
-const About = () => {
+const About = ({ isMobile }) => {
   return (
     <>
       <motion.div variants={textVariant()}>
@@ -40,18 +40,21 @@ const About = () => {
 
       <motion.p variants={fadeIn(" ", "", 0.1, 1)}
         className="mt-2 text-secondary text-[17px] max-w-5xl leading-[30px] text-justify">
-         I'm passionate Web Developer with a solid computer science background, specializing in front-end 
+         I'm a passionate Web Developer with a solid computer science background, specializing in front-end 
          development with React. I love turning innovative ideas into engaging digital experiences that are 
          both dynamic and user-friendly. With a dash of Python and Docker in my toolkit, I blend technical 
          know-how with creative problem-solving to build robust, future-forward web applications. I'm always 
          excited to dive into new challenges and craft unique solutions that push the boundaries of what's 
-         possible on the web. Come explore my portfolio and see how I’m shaping digital experiences
+         possible on the web. Come explore my portfolio and see how I’m shaping digital experiences.
       </motion.p>
 
-      <div className="mt-20 flex flex-wrap gap-10">
-        {services.map((service, index) => 
-          (<ServiceCard key={service.title} index={index} {...service} />))}
-      </div>
+      <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-4 w-full">
+  {services.map((service, index) => 
+    (<ServiceCard key={service.title} index={index} {...service} />))}
+</div>
+
+
+      
     </>
   )
 }
