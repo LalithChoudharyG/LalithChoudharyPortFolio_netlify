@@ -1,4 +1,4 @@
-# Front-End Architecture Patterns Documentation
+# 🏗️ Front-End Architecture Patterns Documentation
 
 ## Overview
 This documentation outlines the front-end architecture patterns utilized in this project, which is built using React and Vite. The architecture emphasizes modularity, reusability, and user experience.
